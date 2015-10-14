@@ -34,6 +34,8 @@ i←
 
 Naturally, larger code projects that reuse the same character multiple times will get very complicated very quickly.
 
+Of course you could just keep heading in one direction, but what's the fun in that? Try make it as compact as possible (like in `hello_world/o`)
+
 For an overly complicated hello world-example, see the the directory named `hello_world` in this repo.
 
 ## Compiling and testing

@@ -1,7 +1,7 @@
 dir
 ===
 
-dir is a 2D directory-based esolang.
+dir is a 2D, directory-based esolang.
 
 Each program consists of a directory with the program's name containing a file for each unique character in the program (and `a` if not present in program's code).
 

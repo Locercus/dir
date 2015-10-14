@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+path=`echo -n "$1" | python -c 'import sys, os; print os.path.basename(os.path.normpath(sys.stdin.readline()))'`
+./dir.py $1 && echo && node $1/${path}.js

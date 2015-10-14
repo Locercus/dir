@@ -53,7 +53,9 @@ def main():
 
     print "Interpreting ...\n"
 
-    interpretProgram("a", 0, 0, "init")
+    nextProgram = ("a", 0, 0, "init")
+    while nextProgram != None:
+        nextProgram = interpretProgram(*nextProgram)
 
 
 def interpretProgram(f, x, y, parent):
@@ -71,12 +73,14 @@ def interpretProgram(f, x, y, parent):
     if not f in programs:
         print "\n\nError: Cannot find %s referenced by %s at (%s, %s)" % (f, parent, x, y)
         sys.exit(1)
+        return None
 
     p = programs[f]
 
     if y > len(p) - 1 or x > len(p[y]) - 1:
         print "\n\nError: %s has no character at (%s, %s) as referenced by %s" % (f, x, y, parent)
-        sys.exit(1) 
+        sys.exit(1)
+        return None
 
     arrow = p[y][x]
 
@@ -92,24 +96,28 @@ def interpretProgram(f, x, y, parent):
         print "\n"
         writeFile()
         sys.exit(0)
+        return None
     else:
         print u"\n\nError: Expected (%s, %s) in %s to be %s, %s, %s, %s or %s. Found %s" % (x, y, f, UP, RIGHT, DOWN, LEFT, END, arrow)
         sys.exit(1)
+        return None
 
     if y > len(p) - 1 or x > len(p[y]) - 1:
         print "\n\nError: Arrow at (%s, %s) in %s points to nothing" % (x, y, f)
         sys.exit(1)
+        return None
 
     i = p[y][x]
 
     if i in [END, UP, DOWN, LEFT, RIGHT]:
         print "\n\nError: Expected instruction at (%s, %s) in %s, found %s" % (x, y, f, i)
         sys.exit(1)
+        return None
 
     if i == f:
         y += 1
 
-    interpretProgram(i, x, y, f)
+    return (i, x, y, f)
 
 def writeFile():
     path = os.path.join(dirname, programname + ".js")

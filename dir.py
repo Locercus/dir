@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # Encoding: utf-8
 
-import sys, os
+import sys, os, stat
 
 dirname = u""
 programname = u""

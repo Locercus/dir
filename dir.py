@@ -123,14 +123,5 @@ def writeFile():
     print "Saved as %s" % path
 
 
-
-
-
-
-
-
-
-
-
 main()
 print

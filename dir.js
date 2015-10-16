@@ -31,7 +31,7 @@ function main() {
 
     console.log('Reading files ...');
 
-    files = fs.readdirSync(dirname);
+    var files = fs.readdirSync(dirname);
 
     for (var index in files) {
         var f = files[index];
@@ -59,7 +59,7 @@ function main() {
 
     console.log('Interpreting ...\n');
 
-    nextProgram = ["a", 0, 0, "init"];
+    var nextProgram = ["a", 0, 0, "init"];
 
     while (nextProgram != null)
         nextProgram = interpretProgram.apply(interpretProgram, nextProgram);

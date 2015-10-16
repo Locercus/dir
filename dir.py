@@ -20,7 +20,7 @@ def main():
     global dirname, programname
 
     if len(sys.argv) < 2:
-        print "Error: Missing operand, exiting"
+        print "Error: Missing operand"
         sys.exit(1)
 
     dirname = sys.argv[1].decode("utf-8")

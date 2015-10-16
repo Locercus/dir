@@ -14,6 +14,7 @@ UP    = u'↑'
 DOWN  = u'↓'
 END   = u'↔'
 DOT   = u'↗'
+NL    = u'↖'
 
 def main():
     global dirname, programname
@@ -64,6 +65,8 @@ def interpretProgram(f, x, y, parent):
     char = ''
     if f == DOT:
         char = '.'
+    elif f == NL:
+        char = '\n'
     elif parent != "init":
         char = f
 

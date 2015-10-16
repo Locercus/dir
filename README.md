@@ -9,7 +9,7 @@ Every program starts in a file named `a` by reading the first character on the f
 
 If a file refers to itself (for example as seen in `l` in the hello world example), the y coordinate will be incremented by 1.
 
-Please note that you're limited to using the characters that your operating system allows in filenames. However, to achieve support for all ASCII characters on *nix, you can simply write ↗ to use a dot (as *nix doesn't allow files named just `.`).
+Please note that you're limited to using the characters that your operating system allows in filenames. However, to achieve support for all ASCII characters on *nix, you can simply write ↗ to use a dot (as *nix doesn't allow files named just `.`) and ↖ to insert a newline.
 
 This process continues until an ↔ is encountered at which point the interpreter writes the code to a file by the same name as the directory appended by `.js`
 
